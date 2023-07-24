@@ -7,6 +7,7 @@
 # GPLv3 and has to be open sourced under GPLv3 as well. !!!!!
 import copy
 import sys
+from sys import exit
 import argparse
 import time
 import serial.tools.list_ports
@@ -631,11 +632,11 @@ def main(args):
         if (devicegeneration == "" or (openlock == "" and openmep == "" and opencnd == "")) and not args.unlock:
             print(info)
             print("------------------------------------------------------------\n")
-            print("Usage: ./sierrakeygen.py [-l,-m,-c] [challenge] -d [devicegeneration]")
-            print("Example: ./sierrakeygen.py -l BE96CBBEE0829BCA -d MDM9200")
-            print("or: ./sierrakeygen.py -u for auto unlock")
-            print("or: ./sierrakeygen.py -u -p [portname] for auto unlock with given portname")
-            print("or: ./sierrakeygen.py -s for self-test")
+            print("Usage: sierrakeygen.exe [-l,-m,-c] [challenge] -d [devicegeneration]")
+            print("Example: sierrakeygen.exe -l BE96CBBEE0829BCA -d MDM9200")
+            print("or: sierrakeygen.exe -u for auto unlock")
+            print("or: sierrakeygen.exe -u -p [portname] for auto unlock with given portname")
+            print("or: sierrakeygen.exe -s for self-test")
             print("Supported devicegenerations :")
             for key in infotable:
                 info = f"\t{key}:\t\t"
